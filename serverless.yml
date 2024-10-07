@@ -1,0 +1,16 @@
+service: serverless-offline-example
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+
+functions:
+  hello:
+    handler: src/handler/hello.handler
+    events:
+      - http:
+          path: hello
+          method: get
+
+plugins:
+  - serverless-offline
